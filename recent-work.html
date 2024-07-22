@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- *****   Link To Custom CSS Style Sheet   *****  -->
+    <link rel="stylesheet" type="text/css" href="recent.css">
+    <link rel="stylesheet" href="style.css">
+    <!--  *****   Link To Font Awsome Icons   *****  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+<section class="portfolio">
+    <header class="section-head">
+    </header>
+    <div class="type">
+        Some Of My <br> Latest Works 
+        <!-- <br>world of  -->
+         
+        <!-- <br>Satyam Images</h1> -->
+    </div>
+    <main class="mainContainer">
+        <!--  *****  Buttons Section Starts  *****  -->
+        <div class="button-group">
+            <button class="button active" data-filter="*" onclick="myFunction_show()">All</button>
+            <button class="button" data-filter=".design" onclick="myFunction_hide()">Birthdays</button>
+            <button class="button" data-filter=".development" onclick="myFunction_show()">Weddings & Videos</button>
+            <button class="button" data-filter=".logo" onclick="myFunction_hide()">Events</button>
+        </div>
+        <!--  *****  Buttons Section Ends  *****  -->
+        <!--  *****  Gallery Section Starts  *****  -->
+        <div class="gallery">
+            <!--  *****  Card 1 Starts  *****  -->
+            <div class="item design">
+                <img src="birthday-01.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <!--  *****  Card 1 Ends  *****  -->
+            <!--  *****  Card 2 Starts  *****  -->
+            <div class="item design">
+                <img src="birthday-2.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <!--  *****  Card 2 Ends  *****  -->
+            <!--  *****  Card 3 Starts  *****  -->
+            <div class="item development">
+                <img src="satyam-wed-1.png">
+                <div class="overlay">
+                </div>
+            </div>
+            <!-- Add the video to the page -->
+            <!-- Update the.type div with the new CSS styles -->
+            <!--  *****  Card 3 Ends  *****  -->
+            <!--  *****  Card 4 Starts  *****  -->
+            <div class="item development">
+                <img src="satyam-wed-2.png">
+                <div class="overlay">
+                </div>
+            </div>
+            <!--  *****  Card 4 Ends  *****  -->
+            <!--  *****  Card 5 Starts  *****  -->
+            <div class="item development">
+                <img src="satyam-wed-3.png">
+                <div class="overlay">
+                </div>
+            </div>
+            <!--  *****  Card 5 Ends  *****  -->
+            <!--  *****  Card 6 Starts  *****  -->
+            <div class="item logo">
+                <img src="committee-meeting-1.jpeg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="item logo">
+                <img src="cm-meeting.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="item logo">
+                <img src="satyam-event-1.JPG">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="item logo">
+                <img src="sataym-event-2.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="item logo">
+                <img src="satyam-event-3.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <div class="item logo">
+                <img src="satyam-event-4.jpg">
+                <div class="overlay">
+                </div>
+            </div>
+            <!--  *****  Card 6 Ends  *****  -->
+        </div>
+        <!--  *****  Gallery Section Ends  *****  -->
+    </main>
+    <div class="item development" id="vid">
+        <video width="100%" controls>
+            <source src="mumbai_local.mp4" type="video/mp4">
+            <div class="overlay"></div>
+        </video>
+    </div>
+</section>
+ 
+<script>
+	function myFunction_hide() {
+   document.getElementById("vid").style.display="none";
+ 
+}
+
+function myFunction_show() {
+   document.getElementById("vid").style.display="block";
+ 
+}
+
+</script>
+
+
+
+<!--   *****   JQuery Link   *****   -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!--   *****   Isotope Filter Link   *****  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+<script type="text/javascript">
+	var $galleryContainer = $('.gallery').isotope({
+		itemSelector: '.item',
+  		layoutMode: 'fitRows'
+	})
+
+	$('.button-group .button').on('click', function(){
+		$('.button-group .button').removeClass('active');
+		$(this).addClass('active');
+
+		var value = $(this).attr('data-filter');
+		$galleryContainer.isotope({
+			filter: value 
+		})
+	})
+</script>
+
+</body>
+</html>
